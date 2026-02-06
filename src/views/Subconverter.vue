@@ -339,14 +339,14 @@ export default {
         },
         customBackend: {
           "LSH自用专属后端【vless reality+hy1+hy2】": "https://subapi.zyhlsh.cf",
-          "CM负载均衡后端【vless reality+hy1+hy2】": "https://subapi.cmliussss.net",
+		  "CM负载均衡后端【vless reality+hy1+hy2】": "https://subapi.cmliussss.net",
           "CM应急备用后端【vless reality+hy1+hy2】": "https://subapi.fxxk.dedyn.io",
           "肥羊增强型后端【vless reality+hy1+hy2】": "https://url.v1.mk",
           "肥羊备用后端【vless reality+hy1+hy2】": "https://api.v1.mk",
         },
         backendOptions: [
-          { value: "https://subapi.zyhlsh.cf" }, 
-          { value: "https://subapi.cmliussss.net" },
+          { value: "https://subapi.zyhlsh.cf" },
+		  { value: "https://subapi.cmliussss.net" },
           { value: "https://subapi.fxxk.dedyn.io" },
           { value: "https://url.v1.mk" },
           { value: "https://api.v1.mk" },
@@ -392,12 +392,12 @@ export default {
                 label: "LSH默认_多地区分组（自动测速）",
                 value: "https://raw.lsh8848.workers.dev/clash/Mini_MultiCountry.ini?token=lovelsh"
               },
-              {
+			  {
                 label: "默认",
                 value: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini"
               },
               {
-                label: "默认（自动测速）",
+                label: "默认（自动测速去广告）",
                 value: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_AdblockPlus.ini"
               },
               {
@@ -786,9 +786,9 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: this.getUrlParam() == "" ? "https://subapi.zyhlsh.cf" : this.getUrlParam(),
+        customBackend: this.getUrlParam() == "" ? "https://url.v1.mk" : this.getUrlParam(),
         shortType: "https://v1.mk/short",
-        remoteConfig: "https://raw.lsh8848.workers.dev/clash/Mini_MultiCountry.ini?token=lovelsh",
+        remoteConfig: "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online.ini",
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
@@ -1043,7 +1043,7 @@ export default {
     },
     makeShortUrl() {
       let duan =
-        this。form.shortType === ""
+        this.form.shortType === ""
           ? shortUrlBackend
           : this.form.shortType;
       this.loading1 = true;
@@ -1285,8 +1285,8 @@ export default {
         })
     },
     getBackendVersion() {
-      this。$axios
-        。get(
+      this.$axios
+        .get(
           this.form.customBackend + "/version"
         )
         .then(res => {
@@ -1296,12 +1296,10 @@ export default {
           let b = this.form.customBackend.indexOf("127.0.0.1") !== -1;
           a ? this.$message.success(`${this.backendVersion}` + "肥羊负载均衡增强版后端，已屏蔽免费节点池（会返回403），额外支持vless reality+hysteria+hysteria2订阅转换") : b ? this.$message.success(`${this.backendVersion}` + "本地局域网自建版后端") : this.$message.success(`${this.backendVersion}`);
         })
-        。catch(() => {
+        .catch(() => {
           this.$message.error("请求SubConverter版本号返回数据失败，该后端不可用！");
         });
     }
   }
 };
 </script>
-
-
