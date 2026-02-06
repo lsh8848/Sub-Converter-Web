@@ -342,20 +342,14 @@ export default {
           "CM负载均衡后端【vless reality+hy1+hy2】": "https://subapi.cmliussss.net",
           "CM应急备用后端【vless reality+hy1+hy2】": "https://subapi.fxxk.dedyn.io",
           "肥羊增强型后端【vless reality+hy1+hy2】": "https://url.v1.mk",
-          "肥羊备用后端【vless reality+hy1+hy2】": "https://sub.d1.mk",
-          nameless13提供: "https://www.nameless13.com",
-          subconverter作者提供: "https://sub.xeton.dev",
-          "sub-web作者提供": "https://api.wcc.best",
+          "肥羊备用后端【vless reality+hy1+hy2】": "https://api.v1.mk",
         },
         backendOptions: [
           { value: "https://subapi.zyhlsh.cf" }, 
           { value: "https://subapi.cmliussss.net" },
           { value: "https://subapi.fxxk.dedyn.io" },
           { value: "https://url.v1.mk" },
-          { value: "https://sub.d1.mk" },
-          { value: "https://www.nameless13.com" },
-          { value: "https://sub.xeton.dev" },
-          { value: "https://api.wcc.best" },
+          { value: "https://api.v1.mk" },
         ],
         remoteConfig: [
           {
@@ -442,7 +436,7 @@ export default {
               {
                 label: "ACL_无测速版",
                 value: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_NoAuto.ini"
-              },
+              }，
               {
                 label: "ACL_去广告版",
                 value: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_AdblockPlus.ini"
@@ -658,7 +652,7 @@ export default {
                 label: "跑路云",
                 value:
                   "https://gist.github.com/jklolixxs/9f6989137a2cfcc138c6da4bd4e4cbfc/raw/PaoLuCloud.ini"
-              },
+              }，
               {
                 label: "WaveCloud",
                 value:
@@ -717,7 +711,7 @@ export default {
                 value: "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/SSRcloud.ini"
               },
               {
-                label: "Nirvana",
+                label: "Nirvana"，
                 value: "https://raw.githubusercontent.com/Mazetsz/ACL4SSR/master/Clash/config/V2rayPro.ini"
               },
               {
@@ -798,7 +792,7 @@ export default {
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
-        rename: "",
+        rename: ""，
         devid: "",
         interval: "",
         emoji: true,
@@ -1049,7 +1043,7 @@ export default {
     },
     makeShortUrl() {
       let duan =
-        this.form.shortType === ""
+        this。form.shortType === ""
           ? shortUrlBackend
           : this.form.shortType;
       this.loading1 = true;
@@ -1241,13 +1235,13 @@ export default {
       data.append("exclude", encodeURIComponent(this.form.excludeRemarks));
       data.append("include", encodeURIComponent(this.form.includeRemarks));
       data.append("rename", encodeURIComponent(this.form.rename));
-      data.append("tls13", encodeURIComponent(this.form.tls13.toString()));
-      data.append("xudp", encodeURIComponent(this.form.xudp.toString()));
+      data.append("tls13"， encodeURIComponent(this.form.tls13.toString()));
+      data.append("xudp"， encodeURIComponent(this.form.xudp.toString()));
       data.append("emoji", encodeURIComponent(this.form.emoji.toString()));
       data.append("list", encodeURIComponent(this.form.nodeList.toString()));
       data.append("udp", encodeURIComponent(this.form.udp.toString()));
       data.append("tfo", encodeURIComponent(this.form.tfo.toString()));
-      data.append("expand", encodeURIComponent(this.form.expand.toString()));
+      data.append("expand"， encodeURIComponent(this.form.expand.toString()));
       data.append("scv", encodeURIComponent(this.form.scv.toString()));
       data.append("fdn", encodeURIComponent(this.form.fdn.toString()));
       data.append("sdoh", encodeURIComponent(this.form.tpl.surge.doh.toString()));
@@ -1291,22 +1285,23 @@ export default {
         })
     },
     getBackendVersion() {
-      this.$axios
-        .get(
+      this。$axios
+        。get(
           this.form.customBackend + "/version"
         )
         .then(res => {
           this.backendVersion = res.data.replace(/backend\n$/gm, "");
           this.backendVersion = this.backendVersion.replace("subconverter", "SubConverter");
-          let a = this.form.customBackend.indexOf("url.v1.mk") !== -1 || this.form.customBackend.indexOf("sub.d1.mk") !== -1;
+          let a = this.form.customBackend.indexOf("url.v1.mk") !== -1 || this.form.customBackend.indexOf("api.v1.mk") !== -1;
           let b = this.form.customBackend.indexOf("127.0.0.1") !== -1;
           a ? this.$message.success(`${this.backendVersion}` + "肥羊负载均衡增强版后端，已屏蔽免费节点池（会返回403），额外支持vless reality+hysteria+hysteria2订阅转换") : b ? this.$message.success(`${this.backendVersion}` + "本地局域网自建版后端") : this.$message.success(`${this.backendVersion}`);
         })
-        .catch(() => {
+        。catch(() => {
           this.$message.error("请求SubConverter版本号返回数据失败，该后端不可用！");
         });
     }
   }
 };
 </script>
+
 
