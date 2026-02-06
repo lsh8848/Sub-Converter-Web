@@ -652,7 +652,7 @@ export default {
                 label: "跑路云",
                 value:
                   "https://gist.github.com/jklolixxs/9f6989137a2cfcc138c6da4bd4e4cbfc/raw/PaoLuCloud.ini"
-              }，
+              },
               {
                 label: "WaveCloud",
                 value:
@@ -711,7 +711,7 @@ export default {
                 value: "https://raw.githubusercontent.com/Mazeorz/airports/master/Clash/SSRcloud.ini"
               },
               {
-                label: "Nirvana"，
+                label: "Nirvana",
                 value: "https://raw.githubusercontent.com/Mazetsz/ACL4SSR/master/Clash/config/V2rayPro.ini"
               },
               {
@@ -792,7 +792,7 @@ export default {
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
-        rename: ""，
+        rename: "",
         devid: "",
         interval: "",
         emoji: true,
@@ -1235,13 +1235,13 @@ export default {
       data.append("exclude", encodeURIComponent(this.form.excludeRemarks));
       data.append("include", encodeURIComponent(this.form.includeRemarks));
       data.append("rename", encodeURIComponent(this.form.rename));
-      data.append("tls13"， encodeURIComponent(this.form.tls13.toString()));
-      data.append("xudp"， encodeURIComponent(this.form.xudp.toString()));
+      data.append("tls13", encodeURIComponent(this.form.tls13.toString()));
+      data.append("xudp", encodeURIComponent(this.form.xudp.toString()));
       data.append("emoji", encodeURIComponent(this.form.emoji.toString()));
       data.append("list", encodeURIComponent(this.form.nodeList.toString()));
       data.append("udp", encodeURIComponent(this.form.udp.toString()));
       data.append("tfo", encodeURIComponent(this.form.tfo.toString()));
-      data.append("expand"， encodeURIComponent(this.form.expand.toString()));
+      data.append("expand", encodeURIComponent(this.form.expand.toString()));
       data.append("scv", encodeURIComponent(this.form.scv.toString()));
       data.append("fdn", encodeURIComponent(this.form.fdn.toString()));
       data.append("sdoh", encodeURIComponent(this.form.tpl.surge.doh.toString()));
@@ -1303,6 +1303,5 @@ export default {
   }
 };
 </script>
-
 
 
