@@ -436,7 +436,7 @@ export default {
               {
                 label: "ACL_无测速版",
                 value: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_NoAuto.ini"
-              }，
+              },
               {
                 label: "ACL_去广告版",
                 value: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_AdblockPlus.ini"
@@ -1303,5 +1303,6 @@ export default {
   }
 };
 </script>
+
 
 
