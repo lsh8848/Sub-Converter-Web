@@ -348,12 +348,14 @@ export default {
           "dlj.tf": "https://dlj.tf/short",
         },
         customBackend: {
-          "CM提供-负载均衡后端": "https://subapi.cmliussss.net",
-          "CM提供-应急备用后端": "https://subapi.fxxk.dedyn.io",
-          "肥羊提供-增强型后端": "https://url.v1.mk",
-          "肥羊提供-备用后端": "https://api.v1.mk",
+          "LSH自用专属后端【vless reality+xhttp+hy2】": "https://subapi.925529.xyz",
+    		  "CM负载均衡后端【vless reality+xhttp+hy2】": "https://subapi.cmliussss.net",
+          "CM应急备用后端【vless reality+xhttp+hy2】": "https://subapi.fxxk.dedyn.io",
+          "肥羊增强型后端【vless reality+hy1+hy2】": "https://url.v1.mk",
+          "肥羊备用后端【vless reality+hy1+hy2】": "https://api.v1.mk",
         },
         backendOptions: [
+          { value: "https://subapi.925529.xyz" },
           { value: "https://subapi.cmliussss.net" },
           { value: "https://subapi.fxxk.dedyn.io" },
           { value: "https://url.v1.mk" },
@@ -361,8 +363,12 @@ export default {
         ],
         remoteConfig: [
           {
-            label: "CM规则",
+            label: "LSH规则",
             options: [
+              {
+                label: "LSH默认_多地区分组（自动测速）",
+                value: "https://raw.lsh8848.workers.dev/clash/Mini_MultiCountry.ini?token=lovelsh"
+              },
               {
                 label: "CM_Online 默认版 识别港美地区(与Github同步)",
                 value: "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online.ini"
@@ -790,9 +796,9 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: this.getUrlParam() == "" ? "https://url.v1.mk" : this.getUrlParam(),
+        customBackend: this.getUrlParam() == "" ? "https://subapi.925529.xyz" : this.getUrlParam(),
         shortType: "https://v1.mk/short",
-        remoteConfig: "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online.ini",
+        remoteConfig: "https://raw.lsh8848.workers.dev/clash/Mini_MultiCountry.ini?token=lovelsh",
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
@@ -933,7 +939,7 @@ export default {
       window.open(yglink);
     },
     gotoBasicVideo() {
-      this.$alert("别忘了关注友善的肥羊哦！", {
+      this.$alert("友善的肥羊！", {
         type: "warning",
         confirmButtonText: '确定',
         customClass: 'msgbox',
@@ -944,7 +950,7 @@ export default {
         });
     },
     gotoAdvancedVideo() {
-      this.$alert("别忘了关注友善的肥羊哦！", {
+      this.$alert("友善的肥羊！", {
         type: "warning",
         confirmButtonText: '确定',
         customClass: 'msgbox',
